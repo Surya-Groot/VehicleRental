@@ -15,5 +15,8 @@ route.put('/update/:id', async (req, res) => { await orgCtrl.updateOrg(req, res,
 
 route.post('/img', comCtrl.imgUpload);
 
+route.get('/getSingle/:id', async (req, res) => { await comCtrl.getItemById(req, res, user) });
+
+route.get('/getAll', async (req, res) => { await comCtrl.getAllItems(req, res, user) });
 
 module.exports = route
