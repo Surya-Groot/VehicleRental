@@ -13,12 +13,7 @@ const bookinRoute = require('./Routes/bookingRoute');
 require('./Utils/googleAuth'); 
 
 const cors = require('cors');
-app.use(cors({
-    origin:['http://localhost:7000', 'http://127.0.0.1:6000'],
-    methods: 'GET,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204   
-}));
+app.use(cors());
 
 // app.use(session({ 
 //     secret: 'your_secret_key', 
