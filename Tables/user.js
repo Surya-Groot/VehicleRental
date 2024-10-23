@@ -8,14 +8,15 @@ const user = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
-    mobile: String,
+    phoneNo: String,
     altNo: String,
     DOB: Date,
     gender: String,
     address: String,
     proofs: Array,
     logo: String,
-    otp: Number
+    otp: Number,
+    createAt: { type: Date, default: Date.now()  }
 
 });
 
