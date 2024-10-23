@@ -1,5 +1,5 @@
 const { gendrateUniqueid } = require("../Utils/idGen");
-
+const upload = require("../Utils/fileUpload");
 
 
 // add
@@ -73,3 +73,21 @@ exports.deleteItem = async (req, res, tab) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+// file Upload
+
+exports.imgUpload = async (req, res) => {
+
+    try {
+        upload.single('logo')(req, res, async (err) => {
+            if (err) {
+                return res.status(400).json({ mes: "error", err });
+            }
+            logo = req.file ? `/uploads/${req.file.filename}` : null;
+
+            res.status(200).json({ mes: "image upload sucessfully", path: logo });
+        });
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}

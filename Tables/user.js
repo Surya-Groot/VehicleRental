@@ -13,10 +13,11 @@ const user = new mongoose.Schema({
     DOB: Date,
     gender: String,
     address: String,
-    proofs: Array,
-    logo: String,
+    proof: String,
+    pImg: String,
+    DL: String,
     otp: Number,
-    createAt: { type: Date, default: Date.now()  }
+    createAt: { type: Date, default: Date.now() }
 
 });
 

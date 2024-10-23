@@ -28,7 +28,7 @@ exports.regOrg = async (req, res, tab, uni) => {
 
         if (req.body.password) {
 
-           var hashPass = await bycript.hash(req.body.password, 10);
+            var hashPass = await bycript.hash(req.body.password, 10);
         }
 
         const orgId = await gendrateUniqueid(uni);
