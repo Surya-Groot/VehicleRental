@@ -71,25 +71,21 @@ exports.login = async (req, res, tab) => {
 exports.updateOrg = async (req, res, tab) => {
     const orgId = req.params.id;
     try {
-
-        if(req.body.phoneNo){
-
+        if (req.body.phoneNo) {
             const phone = await tab.findOne({ phoneNo: req.body.phoneNo });
             if (phone) {
                 return res.status(404).json({ mes: "phoneNo alerady exists" });
             }
         }
         const updateted = await tab.findOneAndUpdate({ uniqId: orgId }, req.body, { new: true });
-
         if (!updateted) {
             return res.status(404).json({ mes: "User Not Found" });
         }
-
         return res.status(200).json({ mes: "Update Sucessfully" })
 
     } catch (error) {
-        console.log(error, 'err');
-        return res.status(200).json(error)
+        console.log("catch", error, 'err');
+        return res.status(500).json(error)
 
     }
 
