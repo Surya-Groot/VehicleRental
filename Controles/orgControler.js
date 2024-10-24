@@ -72,9 +72,12 @@ exports.updateOrg = async (req, res, tab) => {
     const orgId = req.params.id;
     try {
 
-        const phone = await tab.findOne({ phoneNo: req.body.phoneNo });
-        if (phone) {
-            return res.status(404).json({ mes: "phoneNo alerady exists" });
+        if(req.body.phoneNo){
+
+            const phone = await tab.findOne({ phoneNo: req.body.phoneNo });
+            if (phone) {
+                return res.status(404).json({ mes: "phoneNo alerady exists" });
+            }
         }
         const updateted = await tab.findOneAndUpdate({ uniqId: orgId }, req.body, { new: true });
 
