@@ -83,9 +83,10 @@ exports.imgUpload = async (req, res) => {
             if (err) {
                 return res.status(400).json({ mes: "error", err });
             }
-            logo = req.file ? `/uploads/${req.file.filename}` : null;
+                       
+            logo = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : null;
 
-            res.status(200).json({ mes: "image upload sucessfully", path: logo });
+           return res.status(200).json({ mes: "image upload sucessfully", path: logo });
         });
     } catch (error) {
         return res.status(500).json(error)

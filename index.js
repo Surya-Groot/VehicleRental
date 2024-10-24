@@ -4,9 +4,6 @@ const app = express();
 const mongoose = require('mongoose');
 const path =require('path');
 const orgRoute = require('./Routes/orgRoutes');
-const session = require('express-session');
-const gRoute = require('./Routes/googleRoute');
-const passport = require('passport');
 const userRoute = require('./Routes/userRoute');
 const vehicleRoute = require('./Routes/vehicleRoute');
 const bookinRoute = require('./Routes/bookingRoute');
@@ -14,15 +11,6 @@ require('./Utils/googleAuth');
 
 const cors = require('cors');
 app.use(cors());
-
-// app.use(session({ 
-//     secret: 'your_secret_key', 
-//     resave: false,
-//     saveUninitialized: true 
-// }));
-
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 
 require('dotenv').config();
@@ -40,7 +28,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // routess
 
-// app.use('/',gRoute); 
 app.use('/org',orgRoute);
 app.use('/user',userRoute);
 app.use('/vechicle',vehicleRoute);

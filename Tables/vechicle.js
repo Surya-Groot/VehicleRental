@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 
 
-
-
 const vechical = mongoose.Schema({
 
     uniqId: String,
