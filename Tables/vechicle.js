@@ -6,6 +6,7 @@ const vechical = mongoose.Schema({
 
     uniqId: String,
     orgId: String,
+    featureId:Array,
     vType: String,
     brand: String,
     vModel: String,
@@ -34,7 +35,6 @@ const vechical = mongoose.Schema({
     holderEmail: String,
     airBag: String,
     accHis: String,
-    featuer: Array,
     vImg: Array,
     regDoc: String,
     insDoc: String,

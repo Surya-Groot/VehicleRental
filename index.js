@@ -7,6 +7,7 @@ const orgRoute = require('./Routes/orgRoutes');
 const userRoute = require('./Routes/userRoute');
 const vehicleRoute = require('./Routes/vehicleRoute');
 const bookinRoute = require('./Routes/bookingRoute');
+const featureRoute = require('./Routes/featureRoute');
 require('./Utils/googleAuth'); 
 
 const cors = require('cors');
@@ -32,6 +33,7 @@ app.use('/org',orgRoute);
 app.use('/user',userRoute);
 app.use('/vechicle',vehicleRoute);
 app.use('/booking',bookinRoute);
+app.use('/feature',featureRoute);
 
 
 
