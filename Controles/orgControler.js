@@ -5,13 +5,6 @@ const organization = require('../Tables/organization');
 const bycript = require('bcrypt');
 const mailer = require('nodemailer');
 const upload = require('../Utils/fileUpload');
-const { findOne } = require('../Tables/idGendratore');
-// const { json } = require('express');
-// const { use } = require('passport');
-
-
-
-
 
 exports.regOrg = async (req, res, tab, uni) => {
     try {
@@ -201,7 +194,7 @@ exports.logo = async (req, res, tab, logo) => {
                 return res.status(400).json({ error: err.message });
             }
 
-            user.logo = req.file ? `/uploads/${req.file.filename}` : null;
+            user.logo = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : null;
             await user.save();
 
             res.status(200).json({ mes: "image upload sucessfully", data: user });
