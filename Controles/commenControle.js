@@ -6,7 +6,6 @@ const upload = require("../Utils/fileUpload");
 exports.createItem = async (req, res, tab, uniq) => {
     try {
         const uniId = await gendrateUniqueid(uniq)
-        console.log(uniId);
 
         const newItem = new tab({ uniqId: uniId, ...req.body });
         const savedItem = await newItem.save();
