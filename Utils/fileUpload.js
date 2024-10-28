@@ -18,14 +18,14 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-    const allowType = /jpeg|jpg|png/;
+    const allowType = /jpeg|jpg|png|pdf/;
     const mimeType = allowType.test(file.mimetype);
     const extname = allowType.test(path.extname(file.originalname).toLowerCase());
 
     if (mimeType && extname) {
         return cb(null, true);
     } else {
-        cb(new Error('only images are allowed'));
+        cb(new Error('only images and pdf only allowed'));
     }
 };
 
