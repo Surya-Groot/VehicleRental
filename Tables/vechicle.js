@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 
-const vechical = mongoose.Schema({
+const vechical = new mongoose.Schema({
 
     uniqId: String,
     orgId: String,
-    featureId:Array,
+    featureId: Array,
     vType: String,
     brand: String,
     vModel: String,
@@ -40,6 +40,7 @@ const vechical = mongoose.Schema({
     insDoc: String,
     holderDL: String,
     holderProof: String,
+    status: String,
     createAt: { type: Date, default: Date.now() }
 });
 

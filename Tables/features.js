@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 
-const features = mongoose.Schema({
+const features = new mongoose.Schema({
     uniqId: String,
     name: String,
     isbike: { type: Boolean, default: false },
-    status: { type: Boolean, default: true }
+    // status: { type: Boolean, default: true }
 })
 
 

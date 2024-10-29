@@ -13,6 +13,9 @@ route.get('/getall', async (req, res) => { await comCtrl.getAllItems(req, res, b
 
 route.put('/update/:id', async (req, res) => { await comCtrl.updateItem(req, res, book) });
 
-route.get('/filter',bookingCtrl.bookingFilter);
+route.get('/Bfilter', bookingCtrl.bookingFilter);
+
+route.get('/Vfilter', bookingCtrl.vehiFillter);
+
 
 module.exports = route;

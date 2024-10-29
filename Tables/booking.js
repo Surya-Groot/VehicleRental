@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const booking = mongoose.Schema({
+const booking = new mongoose.Schema({
 
     uniqId: String,
     vehicleId: String,
