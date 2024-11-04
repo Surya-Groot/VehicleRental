@@ -17,7 +17,8 @@ const user = new mongoose.Schema({
     pImg: String,
     DL: String,
     otp: Number,
-    createAt: { type: Date, default: Date.now() }
+    createAt: { type: Date, default: Date.now() },
+    status:String
 
 });
 

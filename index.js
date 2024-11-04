@@ -32,7 +32,7 @@ app.use('/org',orgRoute);
 app.use('/user',userRoute);
 app.use('/vechicle',vehicleRoute);
 app.use('/booking',bookinRoute);
-app.use('/driver',driverRoute)
+app.use('/driver',driverRoute);
 
 
 
