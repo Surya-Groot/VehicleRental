@@ -12,6 +12,8 @@ exports.createItem = async (req, res, tab, uniq) => {
         res.status(201).json({ data: savedItem });
 
     } catch (err) {
+        console.log(err);
+        
         res.status(400).json({ error: err.message });
     }
 };

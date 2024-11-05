@@ -1,10 +1,11 @@
 
 
 const { gendrateUniqueid } = require('../Utils/idGen');
-const organization = require('../Tables/organization');
 const bycript = require('bcrypt');
 const mailer = require('nodemailer');
 const upload = require('../Utils/fileUpload');
+const organization = require('../Tables/organization');
+
 
 exports.regOrg = async (req, res, tab, uni) => {
     try {
