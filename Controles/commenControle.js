@@ -80,6 +80,7 @@ exports.deleteItem = async (req, res, tab) => {
 exports.imgUpload = async (req, res) => {
 
     try {
+        
         upload.single('logo')(req, res, async (err) => {
             if (err) {
                 return res.status(400).json({ mes: "error", err });

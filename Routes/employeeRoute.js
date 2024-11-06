@@ -13,4 +13,4 @@ route.get('/getall',async (req,res)=>{await comCtrl.getAllItems(req,res,emp)});
 route.get('/getSingle/:id',async(req,res)=>{await comCtrl.getItemById(req,res,emp)});
 
 
-module.exports = route;
+module.exports = route; 

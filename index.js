@@ -10,6 +10,7 @@ const bookinRoute = require('./Routes/bookingRoute');
 const driverRoute = require('./Routes/driverRoute');
 const employeRoute = require('./Routes/employeeRoute');
 
+
 const cors = require('cors');
 app.use(cors());
 

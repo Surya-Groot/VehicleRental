@@ -8,6 +8,7 @@ const drivers = new mongoose.Schema({
     orgId: String,
     dName: String,
     dGender: String,
+    DOB: Date,
     batchNo: String,
     expe: String,
     dType: String,
@@ -29,9 +30,9 @@ const drivers = new mongoose.Schema({
     dImg: String,
     dlImd: String,
     adhar: String,
-    langKow:Array,
-    status: String,
-    createAt: {type:Date, default: Date.now()},
+    langKow: Array,
+    status: { type: String, default: Active },
+    createAt: { type: Date, default: Date.now() },
 
 })
 

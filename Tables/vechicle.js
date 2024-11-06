@@ -40,7 +40,7 @@ const vechical = new mongoose.Schema({
     insDoc: String,
     holderDL: String,
     holderProof: String,
-    status: String,
+    status: { type: String, default: Available },
     createAt: { type: Date, default: Date.now() }
 });
 
