@@ -31,7 +31,7 @@ const drivers = new mongoose.Schema({
     dlImd: String,
     adhar: String,
     langKow: Array,
-    status: { type: String, default: "Active" },
+    status: { type: String, default: "Available" },
     createAt: { type: Date, default: Date.now() },
 
 })
