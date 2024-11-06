@@ -18,7 +18,7 @@ const user = new mongoose.Schema({
     DL: String,
     otp: Number,
     createAt: { type: Date, default: Date.now() },
-    status: { type: String, default: Active },
+    status: { type: String, default: "Active" },
 
 });
 
