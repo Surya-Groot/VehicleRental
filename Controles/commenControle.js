@@ -105,7 +105,7 @@ exports.imgUpload = async (req, res) => {
             fs.mkdirSync(specificDir, { recursive: true });
         }
         // Use multer to handle the file upload to the dynamic folder
-        upload.single('img')(req, res, (err) => {
+        upload.single('logo')(req, res, (err) => {
             if (err) {
                 return res.status(400).json({ message: "Error uploading image", error: err });
             }
