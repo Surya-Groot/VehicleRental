@@ -13,7 +13,7 @@ route.post('/forgetPass', async (req, res) => { await orgCtrl.forgotPass(req, re
 
 route.put('/update/:id', async (req, res) => { await orgCtrl.updateOrg(req, res, user) });
 
-route.post('/img', comCtrl.imgUpload);
+route.post('/img/:folder', comCtrl.imgUpload);
 
 route.get('/getSingle/:id', async (req, res) => { await comCtrl.getItemById(req, res, user) });
 
