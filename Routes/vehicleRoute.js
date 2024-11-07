@@ -2,6 +2,7 @@
 const express = require('express');
 const route = express.Router();
 const comControle = require('../Controles/commenControle');
+const bookigControle = require('../Controles/bookigControle');
 const vechi = require('../Tables/vechicle')
 const feature = require('../Tables/features');
 
@@ -17,6 +18,6 @@ route.delete('/delete/:id',async(req,res)=>{await comControle.deleteItem(req,res
 
 route.post('/add/feature', async (req, res) => { await comControle.createItem(req, res, feature, 'FUT') });
 
-route.get('/getall/feature', async (req, res) => { await comControle.getAllItems(req, res, feature) });
+route.get('/getall/feature/:vehicle', async (req, res) => { await bookigControle.isBike(req, res) });
 
 module.exports = route;

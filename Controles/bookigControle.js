@@ -1,5 +1,6 @@
 
 const vehicle = require('../Tables/booking');
+const features = require('../Tables/features');
 
 exports.bookingFilter = async (req, res) => {
 
@@ -47,7 +48,7 @@ exports.vehiFillter = async (req, res) => {
             query.priceDay = { $gte: minPrice, $lte: maxPrice };
         }
 
-        console.log("Constructed Query:", query);  
+        console.log("Constructed Query:", query);
         const vehicles = await vehicle.find({
             vType: 'SUV',
             vModel: 'Fortuner',
@@ -59,5 +60,27 @@ exports.vehiFillter = async (req, res) => {
 
     } catch (error) {
         return res.status(500).json(erroe);
+    }
+}
+
+exports.isBike = async (req, res) => {
+    try {
+        const ibike = req.params.vehicle;
+        console.log(ibike);
+        
+        if(ibike === "bike"){
+            const asBike  = await features.findOne({isbike:true});
+            return res.status(200).json({data:asBike});
+        }else{
+            const isBike = await features.find();
+            if(!isBike){
+                return res.status(400).json({mess:"features not found"})
+            }
+            return res.status(200).json({data:isBike});
+            
+        }
+
+    } catch (error) {
+        return res.status(500).json(error)
     }
 }

@@ -17,4 +17,6 @@ route.post('/addLanguage', async (req, res) => { await comControle.createItem(re
 route.get('/getAllLang', async (req, res) => { await comControle.getAllItems(req, res, lang) });
 
 
+
+
 module.exports = route;
