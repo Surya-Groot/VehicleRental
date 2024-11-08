@@ -17,7 +17,7 @@ const drivers = new mongoose.Schema({
     altMobNo: String,
     shift: String,
     DLno: String,
-    DLcategory: String,
+    DLcategory: Array,
     DLexpire: Date,
     insNo: String,
     add: String,
