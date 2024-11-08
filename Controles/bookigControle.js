@@ -67,17 +67,17 @@ exports.isBike = async (req, res) => {
     try {
         const ibike = req.params.vehicle;
         console.log(ibike);
-        
-        if(ibike === "bike"){
-            const asBike  = await features.findOne({isbike:true});
-            return res.status(200).json({data:asBike});
-        }else{
+
+        if (ibike === "bike") {
+            const asBike = await features.findOne({ isbike: true });
+            return res.status(200).json({ data: asBike });
+        } else {
             const isBike = await features.find();
-            if(!isBike){
-                return res.status(400).json({mess:"features not found"})
+            if (!isBike) {
+                return res.status(400).json({ mess: "features not found" })
             }
-            return res.status(200).json({data:isBike});
-            
+            return res.status(200).json({ data: isBike });
+
         }
 
     } catch (error) {
