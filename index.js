@@ -31,11 +31,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // routess
 
 app.use('/org', orgRoute);
+app.use('/employee', employeRoute);
 app.use('/user', userRoute);
 app.use('/vechicle', vehicleRoute);
 app.use('/booking', bookinRoute);
 app.use('/driver', driverRoute);
-app.use('/employee', employeRoute);
 
 
 

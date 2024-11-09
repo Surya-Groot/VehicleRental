@@ -77,7 +77,6 @@ exports.isBike = async (req, res) => {
                 return res.status(400).json({ mess: "features not found" })
             }
             return res.status(200).json({ data: isBike });
-
         }
 
     } catch (error) {
