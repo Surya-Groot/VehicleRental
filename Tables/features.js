@@ -5,6 +5,7 @@ const features = new mongoose.Schema({
     uniqId: String,
     name: String,
     isbike: { type: Boolean, default: false },  
+    ABB:String,
     status: { type: Boolean, default: true }
 })
 
