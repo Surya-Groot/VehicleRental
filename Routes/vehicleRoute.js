@@ -18,8 +18,8 @@ route.delete('/delete/:id', async (req, res) => { await comControle.deleteItem(r
 
 route.post('/add/feature', async (req, res) => { await comControle.createItem(req, res, feature, 'FUT') });
 
-route.get('/getall/feature', async (req, res) => { await comControle.getAllItems(req, res, feature) });
+// route.get('/getall/feature', async (req, res) => { await comControle.getAllItems(req, res, feature) });
 
-route.get('/getall/feature/:vehicle', async (req, res) => { await bookigControle.isBike(req, res) });
+route.get('/getall/feature/:vehicle', bookigControle.isBike);
 
 module.exports = route;

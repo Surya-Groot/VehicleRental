@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const bodyParser = require('body-parser');
 const orgRoute = require('./Routes/orgRoutes');
 const userRoute = require('./Routes/userRoute');
 const vehicleRoute = require('./Routes/vehicleRoute');
@@ -25,6 +26,8 @@ mongoose.connect(dbUrl)
     .catch(() => { console.log('DB Connetion Error'); });
 
 app.use(express.json());
+app.use(bodyParser.json());
+
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
